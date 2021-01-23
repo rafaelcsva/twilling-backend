@@ -226,7 +226,7 @@ async function executeTweetOrder(tweetOrder, callback) {
   })).then((values) => {
     const performed = values.reduce((total, x) =>
       (x.status === 'fulfilled' ? total + 1 : total), 0);
-    return callback(200, {performed: performed});
+    return callback(200, {res: {performed: performed}});
   });
 }
 
@@ -261,7 +261,7 @@ async function executeLikeOrder(likeOrder, callback) {
         })).then((values) => {
           const performed = values.reduce((total, x) =>
             (x.status === 'fulfilled' ? total + 1 : total), 0);
-          return callback(200, {performed: performed});
+          return callback(200, {res: {performed: performed}});
         });
       });
 }
@@ -299,7 +299,7 @@ async function executeRetweetOrder(retweetOrder, callback) {
         })).then((values) => {
           const performed = values.reduce((total, x) =>
             (x.status === 'fulfilled' ? total + 1 : total), 0);
-          return callback(200, {performed: performed});
+          return callback(200, {res: {performed: performed}});
         });
       });
 }
@@ -325,7 +325,7 @@ async function executeFollowOrder(tweetOrder, callback) {
     const performed = values.reduce((total, x) =>
       (x.status === 'fulfilled' ? total + 1 : total), 0);
 
-    return callback(200, {performed: performed});
+    return callback(200, {res: {performed: performed}});
   });
 }
 
