@@ -14,11 +14,11 @@ function tokenize(data) {
 
 /**
  * Encrypt a message.
- * @param {string} jwt payload data in jwt.
+ * @param {string} token payload data in jwt.
  * @return {string} A promise that
  * returns the payload or a error if the token is invalid
  */
-function decrypt(jwt) {
+function decrypt(token) {
   return new Promise(function(resolve, reject) {
     jwt.verify(token, config.privateKey, function(err, decoded) {
       if (err) {
